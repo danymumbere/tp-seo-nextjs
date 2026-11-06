@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   locale: "fr_CD", 
   siteName: "DEEP TRAINING",
   url: "/", },
+  verification: { google: "S_x2kdfF4LPKYZmUkCL9PHloLFVzEsjyKTRJNpomJLU", },
 }; 
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
