@@ -1,69 +1,158 @@
-import Image from "next/image";
+const coursList = [
+  {
+    id: "01",
+    icone: "|🎨|",
+    titre: "Design de marque",
+    description: "Crée une identité distinctive qui résonne avec votre audience et reste à part sur le marché.",
+  },
+  {
+    id: "02",
+    icone: "|💻|",
+    titre: "Développement web",
+    description: "Construis rapidement, des sites web scallables qui chargent vite, engagent les visiteurs et les change en clients.",
+  },
+  {
+    id: "03",
+    icone: "|📷|",
+    titre: "Photographie",
+    description: "Capture des visuels clairs qui racontent l'histoire de ton identité et supporte le marketing de tes produits.",
+  },
+  {
+    id: "04",
+    icone: "|📢|",
+    titre: "Marketing digital",
+    description: "Campagnes stratégiques qui atteignent votre audience cible et apportent une croissance mesurable.",
+  },
+];
+
+const statsList = [
+  { chiffre: "500+", label: "Projets réalisés" },
+  { chiffre: "98%", label: "de satisfaction client" },
+  { chiffre: "+12", label: "années d'expérience" },
+  { chiffre: "50+", label: "Membres de l'équipe" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
+    <>
+      <header className="site-header">
+        <div className="container navigation">
+          <a href="#accueil" className="logo" aria-label="Deep Training">
+            <span className="logo-icon"></span>
+            <span className="logo-text">DEEP TRAINING</span>
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          <nav className="nav-links" aria-label="Navigation principale">
+            <a href="#accueil">Accueil</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
+      </header>
+
+      <main>
+        {/* Hero Section */}
+        <section className="hero" id="accueil">
+          <div className="container hero-grid">
+            <div className="hero-content">
+              <h1>Pour votre formation.</h1>
+              <p className="hero-description">
+                Pour votre formation, ici vous pouvez transformer un titre de cours en une formation complète
+              </p>
+              <div className="hero-actions">
+                <a href="https://danymak.infinityfree.io/app/" className="button button-primary">
+                  Accéder À L&apos;application
+                </a>
+                <a href="https://danymak.infinityfree.io/app/" className="button button-outline">
+                  Voir Les Cours Disponibles
+                </a>
+              </div>
+              <div className="hero-secondary-action">
+                <a href="https://resources-aime.netlify.app/" className="button button-dark">
+                  Produit Similaire
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-visual">
+              <div className="preview-cards">
+                <div className="preview-card card-1">
+                  <span>Identité de marque</span>
+                </div>
+                <div className="preview-card card-2 active">
+                  <span>Web Design</span>
+                </div>
+                <div className="preview-card card-3">
+                  <span>Photographie</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Courses Section */}
+        <section className="section courses-section" id="work">
+          <div className="container">
+            <div className="section-heading text-center">
+              <h2>Quelques idées de titres de cours</h2>
+              <p>Pour te permettre d&apos;avoir tout le bagage technique dont tu as besoin pour transformer tes projets en réalité.</p>
+            </div>
+            <div className="courses-grid">
+              {coursList.map((cours) => (
+                <div className="course-card" key={cours.id}>
+                  <div className="course-icon">{cours.icone}</div>
+                  <h3>{cours.titre}</h3>
+                  <p>{cours.description}</p>
+                  <a href="#contact" className="course-link">
+                    Learn more →
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="section stats-section">
+          <div className="container">
+            <h2 className="stats-title">Nous visons:</h2>
+            <div className="stats-grid">
+              {statsList.map((stat, index) => (
+                <div className="stat-item" key={index}>
+                  <div className="stat-number">{stat.chiffre}</div>
+                  <div className="stat-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="cta-section" id="contact">
+          <div className="container cta-box">
+            <h2>Commençons ensemble</h2>
+            <p>Prêt à te transformer d&apos;apprenti à expérimenté ?</p>
+            <div className="cta-actions">
+              <a href="https://danymak.infinityfree.io/app/" className="button button-dark-outline">
+                Voir Les Cours Disponibles
+              </a>
+              <a href="https://danymak.infinityfree.io/app/" className="button button-light">
+                Accéder À L&apos;application
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer className="footer">
+        <div className="container footer-inner">
+          <p>© 2026 Default. All rights reserved.</p>
+          <div className="footer-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
