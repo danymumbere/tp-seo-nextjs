@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = { 
-  metadataBase: new URL("https://deeptraining.vercel.app"),
+  metadataBase: new URL("https://deeptraining-lilac.vercel.app/"),
   title: "DEEP TRAINING",
   description: "Découvrez des cours créés par la communauté et créez-en par Gemini intégré",
   alternates: { canonical: "/" }, 
